@@ -36,6 +36,7 @@ command = ffmpeg()
   .on('error', function (err, stdout, stderr) {
     console.log(`error:   + ${err.message}`.red.inverse);
   })
+  .on('progress', function( progress ) { console.log( '进行中，完成' + progress.percent + '%' )}
   .on('end', function () {
     console.log(`[  ${new Date()}  ] Vedio Pushing is Finished !`.yellow.inverse);
   });
