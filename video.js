@@ -8,7 +8,7 @@ let command = null;
 //**  PI  */
 command = ffmpeg()
   .input("/home/pi/Downloads/jackpot.mp4")
-  .inputOptions(["-re", "-stream_loop -1"])
+  .inputOptions(["-re", "-stream_loop -1", '"-s 1280x720"'])
   .addOptions(["-vcodec h264_omx", "-acodec aac"])
   .format("flv")
   .output(outputPath)
