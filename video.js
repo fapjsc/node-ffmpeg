@@ -8,6 +8,7 @@ let command = null;
 //**  PI  */
 command = ffmpeg()
   .input("/home/pi/Downloads/chrome.webm")
+  .inputOptions("-re")
   .addOptions(["-vcodec libx264", "-acodec aac"])
   .format("flv")
   .output(outputPath)
