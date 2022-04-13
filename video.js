@@ -13,7 +13,7 @@ command = ffmpeg()
     "-vcodec h264_omx",
     "-acodec aac",
     "-vf scale=1280:720",
-    "slow",
+    "-preset slow",
     "-crf 18",
   ])
   .format("flv")
