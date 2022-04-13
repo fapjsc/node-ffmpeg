@@ -15,6 +15,7 @@ command = ffmpeg()
     "-vf scale=800:600",
     "-preset slow",
     "-crf 18",
+    "-b:v 700k",
   ])
   .format("flv")
   .output(outputPath)
