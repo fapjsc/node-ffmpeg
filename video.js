@@ -8,21 +8,8 @@ let command = null;
 //**  PI  */
 command = ffmpeg()
   .input("/home/pi/Downloads/chrome.webm")
-  .inputOptions("-s 800x600")
   .addInput("plughw:CARD=MS2109,DEV=0")
-  .addOptions([
-    "-c:v libx264",
-    "-profile:v main",
-    "-pix_fmt yuv420p",
-    "-vf hue=b=2",
-    "-nr 1000",
-    "-g 20",
-    "-af volume=10",
-    "-b:v 700k",
-    "-movflags faststart",
-    "-tune zerolatency",
-    "-preset veryfast",
-  ])
+  .addOptions(["-c:v libx264", "-c:a aac"])
 
   .inputOption("-f alsa")
   .addOptions(["-c:a aac", "-b:a 64k"])
