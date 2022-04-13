@@ -12,7 +12,7 @@ command = ffmpeg()
   .addOptions([
     "-vcodec h264_omx",
     "-acodec aac",
-    "-vf scale=1280:720",
+    "-vf scale=800:600",
     "-preset slow",
     "-crf 18",
   ])
