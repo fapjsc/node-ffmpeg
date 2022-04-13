@@ -8,9 +8,10 @@ let command = null;
 //**  PI  */
 command = ffmpeg()
   .input("/home/pi/Downloads/chrome.webm")
-  .addOptions(["-c:v libx264", "-c:a aac"])
+  .addOptions(["-vcodec libx264", "-acodec aac"])
   .format("flv")
   .output(outputPath)
+  .loop()
 
   //** LISTEN */
   .on("start", function (commandLine) {
