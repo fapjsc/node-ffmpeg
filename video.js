@@ -7,7 +7,7 @@ let command = null;
 
 //**  PI  */
 command = ffmpeg()
-  .input("/home/pi/Downloads/jackpot.mp4")
+  .input("/home/pi/Downloads/chrome.webm")
   .inputOptions("-re")
   .inputOption("-stream_loop -1")
   .addOptions(["-vcodec libx264", "-acodec aac"])
