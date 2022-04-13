@@ -16,8 +16,6 @@ command = ffmpeg()
     "-preset slow",
     "-crf 18",
     "-b:v 2200k",
-    "-maxrate 2200k",
-    "-minrate 2200k ",
     "-bufsize 2200k ",
   ])
   .format("flv")
