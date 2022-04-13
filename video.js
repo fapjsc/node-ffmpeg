@@ -10,9 +10,6 @@ command = ffmpeg()
   .input("/home/pi/Downloads/chrome.webm")
   .addInput("plughw:CARD=MS2109,DEV=0")
   .addOptions(["-c:v libx264", "-c:a aac"])
-
-  .inputOption("-f alsa")
-  .addOptions(["-c:a aac", "-b:a 64k"])
   .format("flv")
   .output(outputPath)
 
