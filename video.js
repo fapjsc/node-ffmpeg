@@ -9,7 +9,7 @@ let command = null;
 command = ffmpeg()
   .input("/home/pi/Downloads/chrome.webm")
   .inputOptions("-re")
-  .inputOption('-stream_loop -1)'
+  .inputOption("-stream_loop -1")
   .addOptions(["-vcodec libx264", "-acodec aac"])
   .format("flv")
   .output(outputPath)
