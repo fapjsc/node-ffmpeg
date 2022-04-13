@@ -1,7 +1,7 @@
 const ffmpeg = require("fluent-ffmpeg");
 const colors = require("colors");
 
-const outputPath = `rtmp://220.135.67.240/jp/test`;
+const outputPath = `rtmp://220.135.67.240/jp/jp-1`;
 
 let command = null;
 
