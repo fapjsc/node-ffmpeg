@@ -10,12 +10,15 @@ command = ffmpeg()
   .input("/home/pi/Downloads/jackpot.mp4")
   .inputOptions(["-re", "-stream_loop -1"])
   .addOptions([
-    "-vcodec h264_omx",
+    "-c:v h264_omx",
     "-acodec aac",
     "-vf scale=800:600",
     "-preset slow",
     "-crf 18",
-    "-b:v 700k",
+    "-b:v 2200k",
+    "-maxrate 2200k",
+    "-minrate 2200k ",
+    "-bufsize 2200k ",
   ])
   .format("flv")
   .output(outputPath)
