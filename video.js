@@ -8,8 +8,14 @@ let command = null;
 //**  PI  */
 command = ffmpeg()
   .input("/home/pi/Downloads/jackpot.mp4")
-  .inputOptions(["-re", "-stream_loop -1", "-s 1280x720"])
-  .addOptions(["-vcodec h264_omx", "-acodec aac"])
+  .inputOptions(["-re", "-stream_loop -1"])
+  .addOptions([
+    "-vcodec h264_omx",
+    "-acodec aac",
+    "-vf scale=1280:720",
+    "slow",
+    "-crf 18",
+  ])
   .format("flv")
   .output(outputPath)
 
