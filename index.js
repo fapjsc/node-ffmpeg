@@ -6,7 +6,6 @@ const ip = getIPAddress();
 
 const outputPath = `rtmp://220.135.67.240/game/${ip.split(".").pop()}`;
 
-console.log(outputPath);
 
 let command = null;
 
@@ -36,7 +35,7 @@ command = ffmpeg()
 
   //** LISTEN */
   .on("start", function (commandLine) {
-    console.log(`[  ${new Date()}  ] Vedio is Pushing !`.green);
+    console.log(`[  ${new Date()}  ] Vedio is Pushing To ${outputPath} !`.green);
     console.log(`commandLine:  + ${commandLine}`.blue);
   })
   .on("error", function (err, stdout, stderr) {
