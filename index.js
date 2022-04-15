@@ -46,6 +46,13 @@ command = ffmpeg()
     console.log(
       `[  ${new Date()}  ] Vedio Pushing is Finished !`.yellow.inverse
     );
+  })
+  .on('progress', function(progress) {
+    console.log('Processing: ' + progress.timemark + '時間戳');
+    console.log('Processing: ' + progress.frames + '總處理幀數');
+    console.log('Processing: ' + progress.currentFps + '當前處理的幀率');
+    console.log('Processing: ' + progress.currentKbps + '當前處理的吞吐量');
+    console.log('Processing: ' + progress.currentKbps + '當前處理的吞吐量');
   });
 
 command.run();
