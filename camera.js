@@ -26,6 +26,7 @@ command = ffmpeg()
     "-movflags faststart",
     "-tune zerolatency",
     "-preset ultrafast",
+    "-bf 0"
   ])
 
   .inputOption("-f alsa")
