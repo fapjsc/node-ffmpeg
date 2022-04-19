@@ -23,7 +23,7 @@ command = ffmpeg()
     "-b:v 700k",
     "-movflags faststart",
     "-tune zerolatency",
-    "-preset ultrafast",
+    "-preset veryfast",
     "-vf scale=800:750"
   ])
   .format("flv")
