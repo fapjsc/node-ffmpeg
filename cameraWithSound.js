@@ -22,7 +22,6 @@ command = ffmpeg()
     "-b:v 700k",
     "-movflags faststart",
     "-tune zerolatency",
-    "-preset ultrafast",
     "-vf scale=800:750",
     "-c:a aac",
     "-b:a 64k",
