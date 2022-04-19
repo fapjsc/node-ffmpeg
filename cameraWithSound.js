@@ -25,7 +25,8 @@ command = ffmpeg()
     "-preset ultrafast",
     "-vf scale=800:750",
     "-c:a aac",
-    "-b:a 64k"
+    "-b:a 64k",
+    "-vf scale=800:750"
   ])
   .format("flv")
   .output(outputPath)
