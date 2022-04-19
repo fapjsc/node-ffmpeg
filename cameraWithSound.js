@@ -12,24 +12,25 @@ let command = null;
 //**  PI  */
 command = ffmpeg()
   .input("/dev/video0")
-  .inputOptions("-s 800x600")
+  .inputOptions(["-r 20", "-s 800x600"])
   .addInput("plughw:2")
   .addOptions([
     "-c:v libx264",
     "-profile:v main",
     "-pix_fmt yuv420p",
-    "-g 5",
+    "-g 20",
     "-b:v 700k",
     "-movflags faststart",
     "-tune zerolatency",
     "-preset ultrafast",
     "-vf scale=800:750",
-    "-bf 0"
+    "-c:a aac",
+    "-b:a 64k"
   ])
   .format("flv")
   .output(outputPath)
   .inputOption("-f alsa")
-  .addOptions(["-c:a aac", "-b:a 64k"])
+//   .addOptions(["-c:a aac", "-b:a 64k"])
 
   //** LISTEN */
   .on("start", function (commandLine) {
