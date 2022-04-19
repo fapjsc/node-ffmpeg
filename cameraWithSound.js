@@ -12,13 +12,13 @@ let command = null;
 //**  PI  */
 command = ffmpeg()
   .input("/dev/video0")
-  .inputOptions(["-r 20", "-s 800x600"])
+  .inputOptions(["-s 800x600"])
   .addInput("plughw:2")
   .addOptions([
     "-c:v libx264",
     "-profile:v main",
     "-pix_fmt yuv420p",
-    "-g 15",
+    "-g 10",
     "-b:v 700k",
     "-movflags faststart",
     "-tune zerolatency",
