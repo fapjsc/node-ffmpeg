@@ -14,7 +14,7 @@ command = ffmpeg()
   .input("/dev/video0")
   .inputOptions("-s 800x600")
   // .addInput("plughw:CARD=MS2109,DEV=0")
-  .addInput("plughw:2")
+  // .addInput("plughw:2")
   .addOptions([
     "-c:v libx264",
     "-profile:v main",
@@ -24,10 +24,12 @@ command = ffmpeg()
     "-movflags faststart",
     "-tune zerolatency",
     "-preset ultrafast",
-    "-vf scale=800:750 "
+    "-vf scale=800:750"
   ])
   .format("flv")
   .output(outputPath)
+  // .inputOption("-f alsa")
+  // .addOptions(["-c:a aac", "-b:a 64k"])
 
   //** LISTEN */
   .on("start", function (commandLine) {
