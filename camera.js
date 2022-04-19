@@ -19,18 +19,13 @@ command = ffmpeg()
     "-c:v libx264",
     "-profile:v main",
     "-pix_fmt yuv420p",
-    "-vf hue=b=2",
     "-g 20",
-    "-af volume=10",
     "-b:v 700k",
     "-movflags faststart",
     "-tune zerolatency",
     "-preset ultrafast",
-    "-bf 0"
+    "-vf scale=800:750 "
   ])
-
-  .inputOption("-f alsa")
-  .addOptions(["-c:a aac", "-b:a 64k"])
   .format("flv")
   .output(outputPath)
 
