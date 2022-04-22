@@ -6,7 +6,6 @@ const ip = getIPAddress();
 
 const outputPath = `rtmp://220.135.67.240/game/${ip.split(".").pop()}`;
 
-
 let command = null;
 
 //**  PI  */
@@ -23,29 +22,29 @@ command = ffmpeg()
     "-movflags faststart",
     "-tune zerolatency",
     "-preset veryfast",
-    "-vf scale=800:750",
     "-c:a aac",
     "-b:a 64k",
-    "-vf scale=800:750"
+    "-vf scale=800:750",
   ])
   .format("flv")
   .output(outputPath)
   .inputOption("-f alsa")
-//   .addOptions(["-c:a aac", "-b:a 64k"])
+  //   .addOptions(["-c:a aac", "-b:a 64k"])
 
   //** LISTEN */
   .on("start", function (commandLine) {
-    console.log(`[  ${new Date()}  ] Vedio is Pushing To ${outputPath} !`.green);
+    console.log(
+      `[  ${new Date()}  ] Vedio is Pushing To ${outputPath} !`.green
+    );
     console.log(`commandLine:  + ${commandLine}`.blue);
   })
   .on("error", function (err, stdout, stderr) {
-    console.log(`error:   + ${err.message}`.red.inverse);
+    console.log(`[  ${new Date()}  ] error:   + ${err.message}`.red.inverse);
   })
   .on("end", function () {
     console.log(
       `[  ${new Date()}  ] Vedio Pushing is Finished !`.yellow.inverse
     );
-  })
- 
+  });
 
 command.run();

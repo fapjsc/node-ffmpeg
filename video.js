@@ -26,12 +26,12 @@ command = ffmpeg()
     console.log(`commandLine:  + ${commandLine}`.blue);
   })
   .on("error", function (err, stdout, stderr) {
-    console.log(`error:   + ${err.message}`.red.inverse);
+    console.log(`[  ${new Date()}  ] error:   + ${err.message}`.red.inverse);
   })
   .on("end", function () {
     console.log(
       `[  ${new Date()}  ] Vedio Pushing is Finished !`.yellow.inverse
     );
-  })
+  });
 
 command.run();
