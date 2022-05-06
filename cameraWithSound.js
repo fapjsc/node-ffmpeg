@@ -1,3 +1,5 @@
+// 包含聲音輸出的攝影機設備
+
 const ffmpeg = require("fluent-ffmpeg");
 const colors = require("colors");
 const { getIPAddress } = require("./helpers");

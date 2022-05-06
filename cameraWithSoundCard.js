@@ -1,4 +1,4 @@
-// 聲音及視訊直接從 EGM 接出來
+// 沒有聲音的攝影機加上聲卡
 
 const ffmpeg = require("fluent-ffmpeg");
 const colors = require("colors");
@@ -15,7 +15,7 @@ command = ffmpeg()
   .input("/dev/video0")
   .inputOptions("-s 800x600")
   // .addInput("plughw:CARD=MS2109,DEV=0")
-  .addInput("plughw:2")
+  .addInput("plughw:CARD=Device,DEV=0")
   .addOptions([
     "-c:v libx264",
     "-profile:v main",
