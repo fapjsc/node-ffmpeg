@@ -30,7 +30,7 @@ command = ffmpeg()
   ])
   .format("flv")
   .output(outputPath)
-  .inputOption("-f alsa")
+  .inputOption(["-f alsa", "-thread_queue_size 1024"])
   //   .addOptions(["-c:a aac", "-b:a 64k"])
 
   //** LISTEN */

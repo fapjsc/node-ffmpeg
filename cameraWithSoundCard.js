@@ -11,7 +11,7 @@ const outputPath = `rtmp://220.135.67.240/game/${ip.split(".").pop()}`;
 let command = null;
 
 //**  PI  */
-command = ffmpeg()
+command = ffmpeg({ logger: info })
   .input("/dev/video0")
   .inputOptions("-s 800x600")
   // .addInput("plughw:CARD=MS2109,DEV=0")
@@ -29,7 +29,7 @@ command = ffmpeg()
     "-preset ultrafast",
   ])
 
-  .inputOption(["-f alsa", "-thread_queue_size 1024"])
+  .inputOption(["-f alsa", "-thread_queue_size 40960"])
   .addOptions(["-c:a aac", "-b:a 64k"])
   .format("flv")
   .output(outputPath)
