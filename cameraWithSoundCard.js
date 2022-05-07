@@ -48,15 +48,15 @@ command = ffmpeg()
     console.log(
       `[  ${new Date()}  ] Vedio Pushing is Finished !`.yellow.inverse
     );
-  })
-  .on("progress", function (progress) {
-    console.log(
-      "Processing: " +
-        progress.percent +
-        "% done @ " +
-        progress.currentFps +
-        " fps"
-    );
   });
+// .on("progress", function (progress) {
+//   console.log(
+//     "Processing: " +
+//       progress.percent +
+//       "% done @ " +
+//       progress.currentFps +
+//       " fps"
+//   );
+// });
 
 command.run();
