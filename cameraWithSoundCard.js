@@ -29,7 +29,7 @@ command = ffmpeg()
     "-preset ultrafast",
   ])
 
-  .inputOption(["-f alsa", "-thread_queue_size 40960"])
+  .inputOption(["-f alsa", "-thread_queue_size 64k"])
   .addOptions(["-c:a aac", "-b:a 64k"])
   .format("flv")
   .output(outputPath)
