@@ -17,7 +17,6 @@ command = ffmpeg()
   // .addInput("plughw:CARD=MS2109,DEV=0")
   .addInput("plughw:CARD=Device,DEV=0")
   .addOptions([
-    "-thread_queue_size 1024",
     "-c:v libx264",
     "-profile:v main",
     "-pix_fmt yuv420p",
@@ -30,7 +29,7 @@ command = ffmpeg()
     "-preset ultrafast",
   ])
 
-  .inputOption("-f alsa")
+  .inputOption(["-f alsa", "-thread_queue_size 1024"])
   .addOptions(["-c:a aac", "-b:a 64k"])
   .format("flv")
   .output(outputPath)
