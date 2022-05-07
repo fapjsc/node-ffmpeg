@@ -11,7 +11,7 @@ const outputPath = `rtmp://220.135.67.240/game/${ip.split(".").pop()}`;
 let command = null;
 
 //**  PI  */
-command = ffmpeg({ logger: info })
+command = ffmpeg()
   .input("/dev/video0")
   .inputOptions("-s 800x600")
   // .addInput("plughw:CARD=MS2109,DEV=0")
@@ -47,6 +47,15 @@ command = ffmpeg({ logger: info })
   .on("end", function () {
     console.log(
       `[  ${new Date()}  ] Vedio Pushing is Finished !`.yellow.inverse
+    );
+  })
+  .on("progress", function (progress) {
+    console.log(
+      "Processing: " +
+        progress.percent +
+        "% done @ " +
+        progress.currentFps +
+        " fps"
     );
   });
 
