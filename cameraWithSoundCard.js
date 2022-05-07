@@ -26,7 +26,7 @@ command = ffmpeg()
     "-b:v 700k",
     "-movflags faststart",
     "-tune zerolatency",
-    "-preset ultrafast",
+    "-preset veryfast",
   ])
 
   .inputOption(["-f alsa", "-thread_queue_size 64000"])
