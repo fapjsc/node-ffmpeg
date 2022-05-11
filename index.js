@@ -13,7 +13,7 @@ let command = null;
 //**  PI  */
 command = ffmpeg()
   .input("/dev/video0")
-  .inputOptions("-s 800x600")
+  .inputOptions(["-thread_queue_size 4096", "-s 640x480"])
   // .addInput("plughw:CARD=MS2109,DEV=0")
   .addInput("plughw:2")
   .addOptions([
@@ -29,7 +29,7 @@ command = ffmpeg()
     "-preset ultrafast",
   ])
 
-  .inputOption(["-f alsa", "-thread_queue_size 64000"])
+  .inputOption(["-f alsa", "-thread_queue_size 4096"])
   .addOptions(["-c:a aac", "-b:a 64k"])
   .format("flv")
   .output(outputPath)
